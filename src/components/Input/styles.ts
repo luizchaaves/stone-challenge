@@ -14,6 +14,7 @@ export const Container = styled.div`
     padding: 16px;
     width: 136px;
     border-radius: 4px;
+    box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.08);
 
     &::placeholder {
       color: var(--mediumGray2);
