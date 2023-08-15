@@ -1,0 +1,27 @@
+:root{
+  --white: #ffffff;
+  --darkGray: #2E3742;
+  --darkGray2: #45505E;
+  --mediumGray2: #8C9CAD;
+  --mediumGray3: #D7E0EB;
+  --primary: #008B57;
+  --stoneLogo: #00A868;
+  --stoneGreen: #00AB63;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body{
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+  color: var(--darkGray);
+  background: var(--white);
+}
