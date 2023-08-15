@@ -1,13 +1,12 @@
 import './styles/global.css';
-import { ThemeProvider } from 'styled-components';
-import { theme } from './styles/styles';
+import Providers from './components/Providers';
 import Home from './pages/Home';
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
+    <Providers>
       <Home />
-    </ThemeProvider>
+    </Providers>
   );
 }
 
