@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Container = styled.div`
+export const ContainerForm = styled.form`
   display: flex;
   align-items: start;
   flex-direction: column;
