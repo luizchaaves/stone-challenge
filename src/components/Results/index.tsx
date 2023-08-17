@@ -1,6 +1,8 @@
 import ArrowIcon from '../../assets/ArrowIcon';
 import useConvert from '../../hooks/useConvert';
+import { useCurrency } from '../../hooks/useCurrency';
 import { ButtonType } from '../../types/button-type';
+import { PaymentType } from '../../types/payment-type';
 import Button from '../Button';
 import CustomStyleSheetManager from '../CustomStyleSheetManager';
 import { Container, ConversionResult, Informations, Wrapper } from './styles';
@@ -28,14 +30,20 @@ const Results = ({ setConvertedValue }: ResultsPorps) => {
     iof,
   } = useConvert();
 
+  const { setValue, setRate, setPaymentType } = useCurrency();
+
+  const handleBackButton = () => {
+    setValue('');
+    setRate('');
+    setPaymentType(PaymentType.MONEY);
+    setConvertedValue((prev) => !prev);
+  };
+
   return (
     <Wrapper>
       <Container>
         <CustomStyleSheetManager>
-          <Button
-            stylebtn={ButtonType.SECONDARY}
-            onClick={() => setConvertedValue((prev) => !prev)}
-          >
+          <Button stylebtn={ButtonType.SECONDARY} onClick={handleBackButton}>
             <ArrowIcon />
             Voltar
           </Button>
