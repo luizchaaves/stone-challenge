@@ -1,12 +1,15 @@
 import { PropsWithChildren } from 'react';
-import BackgroundImage from '../../assets/mask.png';
+import BackgroundImage from '../../assets/mask.webp';
 
 import { Container, Background } from './styles';
+import CustomStyleSheetManager from '../CustomStyleSheetManager';
 
 const PageLayout = ({ children }: PropsWithChildren) => {
   return (
     <Container>
-      <Background imageurl={BackgroundImage} />
+      <CustomStyleSheetManager>
+        <Background imageurl={BackgroundImage} />
+      </CustomStyleSheetManager>
       {children}
     </Container>
   );

@@ -15,21 +15,21 @@ export const ButtonComponent = styled.button<ButtonProps>`
   cursor: pointer;
 
   color: ${(props) =>
-    props.styleBtn === ButtonType.PRIMARY ? 'var(--white)' : 'var(--darkGray)'};
+    props.stylebtn === ButtonType.PRIMARY ? 'var(--white)' : 'var(--darkGray)'};
   background: ${(props) =>
-    props.styleBtn === ButtonType.PRIMARY
+    props.stylebtn === ButtonType.PRIMARY
       ? 'var(--stoneGreen)'
       : 'var(--white)'};
   border: 1px solid
     ${(props) =>
-      props.styleBtn === ButtonType.PRIMARY
+      props.stylebtn === ButtonType.PRIMARY
         ? 'var(--primary)'
         : 'var(--mediumGray3)'};
 
   &:disabled {
     cursor: not-allowed;
     background: ${(props) =>
-      props.styleBtn === ButtonType.PRIMARY
+      props.stylebtn === ButtonType.PRIMARY
         ? 'var(--mediumGray2)'
         : 'var(--white)'};
   }

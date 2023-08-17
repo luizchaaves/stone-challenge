@@ -6,6 +6,7 @@ import TransferIcon from '../../assets/TransferIcon';
 import { ContainerForm, Wrapper } from './styles';
 import { useCurrency } from '../../hooks/useCurrency';
 import useValues from '../../hooks/useValues';
+import CustomStyleSheetManager from '../CustomStyleSheetManager';
 
 interface FormProps {
   setConvertedValue: React.Dispatch<React.SetStateAction<boolean>>;
@@ -35,15 +36,16 @@ const Form = ({ setConvertedValue }: FormProps) => {
       <ContainerForm onSubmit={handleSubmit}>
         <InputGroup />
         <RadioGroup />
-
-        <Button
-          styleBtn={ButtonType.PRIMARY}
-          disabled={verifyDisabled()}
-          type="submit"
-        >
-          <TransferIcon />
-          Converter
-        </Button>
+        <CustomStyleSheetManager>
+          <Button
+            stylebtn={ButtonType.PRIMARY}
+            disabled={verifyDisabled()}
+            type="submit"
+          >
+            <TransferIcon />
+            Converter
+          </Button>
+        </CustomStyleSheetManager>
       </ContainerForm>
     </Wrapper>
   );

@@ -2,6 +2,7 @@ import ArrowIcon from '../../assets/ArrowIcon';
 import useConvert from '../../hooks/useConvert';
 import { ButtonType } from '../../types/button-type';
 import Button from '../Button';
+import CustomStyleSheetManager from '../CustomStyleSheetManager';
 import { Container, ConversionResult, Informations, Wrapper } from './styles';
 
 interface ResultsPorps {
@@ -30,13 +31,15 @@ const Results = ({ setConvertedValue }: ResultsPorps) => {
   return (
     <Wrapper>
       <Container>
-        <Button
-          styleBtn={ButtonType.SECONDARY}
-          onClick={() => setConvertedValue((prev) => !prev)}
-        >
-          <ArrowIcon />
-          Voltar
-        </Button>
+        <CustomStyleSheetManager>
+          <Button
+            stylebtn={ButtonType.SECONDARY}
+            onClick={() => setConvertedValue((prev) => !prev)}
+          >
+            <ArrowIcon />
+            Voltar
+          </Button>
+        </CustomStyleSheetManager>
 
         <ConversionResult>
           <p>O resultado do cáulculo é</p>

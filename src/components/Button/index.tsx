@@ -1,16 +1,19 @@
 import { ComponentProps } from 'react';
 import { ButtonComponent } from './styels';
 import { ButtonType } from '../../types/button-type';
+import CustomStyleSheetManager from '../CustomStyleSheetManager';
 
 export type ButtonProps = ComponentProps<'button'> & {
-  styleBtn: ButtonType;
+  stylebtn: ButtonType;
 };
 
-const Button = ({ children, styleBtn, ...props }: ButtonProps) => {
+const Button = ({ children, stylebtn, ...props }: ButtonProps) => {
   return (
-    <ButtonComponent styleBtn={styleBtn} {...props}>
-      {children}
-    </ButtonComponent>
+    <CustomStyleSheetManager>
+      <ButtonComponent stylebtn={stylebtn} {...props}>
+        {children}
+      </ButtonComponent>
+    </CustomStyleSheetManager>
   );
 };
 
