@@ -7,6 +7,6 @@ export const Container = styled.div`
 
   @media (max-width: ${(props) => props.theme.tabletBreakpoint}) {
     flex-direction: column;
-    gap: 10px;
+    gap: 24px;
   }
 `;
