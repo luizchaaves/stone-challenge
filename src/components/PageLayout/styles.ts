@@ -22,7 +22,11 @@ export const Background = styled.div<BackgroundProps>`
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   z-index: -1;
+
+  @media (max-width: ${(props) => props.theme.tabletBreakpoint}) {
+    background-image: none;
+  }
 `;
