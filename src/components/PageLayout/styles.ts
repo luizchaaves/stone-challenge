@@ -7,10 +7,10 @@ type BackgroundProps = {
 export const Container = styled.div`
   position: relative;
   padding: 64px;
-  min-height: 100vh;
+  min-height: 100dvh;
 
   @media (max-width: ${(props) => props.theme.tabletBreakpoint}) {
-    padding: 16px;
+    padding: 48px 16px;
   }
 `;
 
