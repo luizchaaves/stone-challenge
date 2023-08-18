@@ -10,6 +10,10 @@ export const Container = styled.div`
   min-height: 100dvh;
 
   @media (max-width: ${(props) => props.theme.tabletBreakpoint}) {
+    padding: 48px;
+  }
+
+  @media (max-width: 414px) {
     padding: 48px 16px;
   }
 `;

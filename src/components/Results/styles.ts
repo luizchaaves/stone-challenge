@@ -19,8 +19,8 @@ export const Container = styled.div`
   align-items: start;
   flex-direction: column;
   gap: 32px;
-  max-width: 296px;
   width: 100%;
+  word-wrap: break-word;
 `;
 
 export const ConversionResult = styled.div`
@@ -28,6 +28,7 @@ export const ConversionResult = styled.div`
   flex-direction: column;
   gap: 8px;
   align-items: start;
+  width: 100%;
 
   p {
     font-weight: 500;
@@ -52,6 +53,7 @@ export const ConversionResult = styled.div`
     span {
       font-size: 48px;
       line-height: 64px;
+      width: 100%;
     }
   }
 `;

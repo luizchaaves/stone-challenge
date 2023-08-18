@@ -30,6 +30,7 @@ const InputGroup = () => {
         label="Dólar"
         placeholder="$ 0.00"
         value={value}
+        inputMode="numeric"
         onChange={({ currentTarget }) =>
           handleChangeValue(currentTarget.value, setValue)
         }
@@ -40,6 +41,7 @@ const InputGroup = () => {
         label="Taxa de Estado"
         placeholder="0 %"
         value={rate}
+        inputMode="numeric"
         onChange={({ currentTarget }) =>
           handleChangeRate(currentTarget.value, setRate)
         }
