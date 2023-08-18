@@ -21,13 +21,13 @@ const formatReal = (value: number) => {
 
 const Results = ({ setConvertedValue }: ResultsPorps) => {
   const {
+    dolar,
+    convertAmount,
+    stateFee,
+    IOF,
     realWithRate,
     realWithoutRate,
     dolarWithRate,
-    convertAmount,
-    dollarValue,
-    stateTax,
-    iof,
   } = useConvert();
 
   const { setValue, setRate, setPaymentType } = useCurrency();
@@ -70,17 +70,17 @@ const Results = ({ setConvertedValue }: ResultsPorps) => {
           <p>
             IOF:{' '}
             <span>
-              {formatDolar(iof)} = {formatReal(iof * dollarValue)}
+              {formatDolar(IOF)} = {formatReal(IOF * dolar)}
             </span>
           </p>
           <p>
             Taxa do estado:{' '}
             <span>
-              {formatDolar(stateTax)} = {formatReal(stateTax * dollarValue)}
+              {formatDolar(stateFee)} = {formatReal(stateFee * dolar)}
             </span>
           </p>
           <p>
-            Cotação do dólar: <span>$1.00 = {formatReal(dollarValue)}</span>
+            Cotação do dólar: <span>$1.00 = {formatReal(dolar)}</span>
           </p>
         </Informations>
       </Container>

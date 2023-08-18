@@ -6,34 +6,46 @@ const cleanValues = (value: string) => {
 };
 
 const calcIOF = (value: number, payment: PaymentType) => {
-  if (payment === PaymentType.MONEY) return (value * 1.1) / 100;
-  else return (value * 6.4) / 100;
+  let percentageIOF;
+  let IOF;
+  if (payment === PaymentType.MONEY) {
+    percentageIOF = 1.1 / 100;
+    IOF = value * percentageIOF;
+  } else {
+    percentageIOF = 6.4 / 100;
+    IOF = value * percentageIOF;
+  }
+
+  return {
+    percentageIOF,
+    IOF,
+  };
 };
 
 const useConvert = () => {
   const { value, currencyValues, rate, paymentType } = useCurrency();
 
+  const dolar = Number(currencyValues);
   const convertAmount = Number(cleanValues(value));
-  const tax = Number(cleanValues(rate));
-  const dollarValue = Number(cleanValues(currencyValues));
-  const stateTax = (convertAmount * tax) / 100;
-  const iof = calcIOF(convertAmount, paymentType);
-  const dolarWithRate = convertAmount - stateTax - iof;
-  const realWithoutRate = convertAmount * dollarValue;
+  const { IOF, percentageIOF } = calcIOF(convertAmount, paymentType);
+  const percentageStateFee = Number(cleanValues(rate)) / 100;
+  const stateFee = convertAmount * percentageStateFee;
+  const dolarWithRate = convertAmount + IOF + stateFee;
+  const realWithoutRate = convertAmount * dolar;
 
   const realWithRate =
     paymentType === PaymentType.MONEY
-      ? (convertAmount - stateTax) * (dollarValue - iof)
-      : (convertAmount - stateTax - iof) * dollarValue;
+      ? (convertAmount + stateFee) * (dolar + percentageIOF)
+      : (convertAmount + stateFee + percentageIOF) * dolar;
 
   return {
+    dolar,
+    convertAmount,
+    stateFee,
+    IOF,
     realWithRate,
     realWithoutRate,
-    convertAmount,
     dolarWithRate,
-    dollarValue,
-    stateTax,
-    iof,
   };
 };
 
