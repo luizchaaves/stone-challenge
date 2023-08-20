@@ -20,4 +20,10 @@ export const ContainerForm = styled.form`
   flex-direction: column;
   gap: 32px;
   max-width: 360px;
+
+  @media (max-width: ${(props) => props.theme.mobileBreakpoint}) {
+    > button {
+      width: 100%;
+    }
+  }
 `;

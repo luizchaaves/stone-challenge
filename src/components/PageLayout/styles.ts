@@ -13,7 +13,7 @@ export const Container = styled.div`
     padding: 48px;
   }
 
-  @media (max-width: 414px) {
+  @media (max-width: ${(props) => props.theme.mobileBreakpoint}) {
     padding: 48px 16px;
   }
 `;

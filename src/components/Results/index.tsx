@@ -50,7 +50,7 @@ const Results = ({ setConvertedValue }: ResultsPorps) => {
         </CustomStyleSheetManager>
 
         <ConversionResult>
-          <p>O resultado do cáulculo é</p>
+          <p>O resultado do cálculo é</p>
           <span>{formatReal(realWithRate)}</span>
         </ConversionResult>
 
